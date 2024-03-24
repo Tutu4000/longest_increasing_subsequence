@@ -12,8 +12,8 @@ def naive(entrada, n):
 def naive_lis(entrada):
     maximo = 1
     n = len(entrada)
-    for i in range(n):
-        maximo = max(maximo, naive(entrada, n))
+    for i in range(n-1):
+        maximo = max(maximo, naive(entrada, i))
     return maximo
 def gerar_entrada(n):
     return [randint(0, 10000) for _ in range(n)]
