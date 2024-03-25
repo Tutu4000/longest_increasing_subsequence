@@ -1,11 +1,9 @@
 from random import randint
 import time
 def naive(entrada, n):
-    if n == 1:
-        return 1
     solucao = 1
     for i in range(n, -1, -1):
-        if entrada[i - 1] < entrada[n - 1]:
+        if entrada[i] < entrada[n]:
             solucao = max(solucao, 1 + naive(entrada, i))
     return solucao
 
@@ -15,6 +13,7 @@ def naive_lis(entrada):
     for i in range(n):
         maximo = max(maximo, naive(entrada, i))
     return maximo
+
 def gerar_entrada(n):
     return [randint(0, 10000) for _ in range(n)]
 
