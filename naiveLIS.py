@@ -4,7 +4,7 @@ def naive(entrada, n):
     if n == 1:
         return 1
     solucao = 1
-    for i in range(n - 1, -1, -1):
+    for i in range(n, -1, -1):
         if entrada[i - 1] < entrada[n - 1]:
             solucao = max(solucao, 1 + naive(entrada, i))
     return solucao
@@ -12,7 +12,7 @@ def naive(entrada, n):
 def naive_lis(entrada):
     maximo = 1
     n = len(entrada)
-    for i in range(n-1):
+    for i in range(n):
         maximo = max(maximo, naive(entrada, i))
     return maximo
 def gerar_entrada(n):
