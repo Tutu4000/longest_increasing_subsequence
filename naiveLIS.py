@@ -30,3 +30,4 @@ with open('entrada.txt', 'w') as f:
     f.write('\n')
     f.write("tempo: ")
     f.write(str((fim - inicio) * 1000))
+
